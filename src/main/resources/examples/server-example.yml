@@ -1,0 +1,22 @@
+# Origami configuration example to run a Minecraft server
+# Should work for all server software, including modded ones like Fabric and Forge
+
+
+# Settings for the console of the jar
+console:
+  # Whether to enable the console output
+  output-enabled: true
+  # Whether to enable console commands using /origami
+  commands-enabled: true
+  # Permission required to send commands to the console using /origami
+  command-permission: origami.console
+
+executing:
+  # Startup arguments for the jar
+  # JARFILE represents the executable being run
+  start-command: "java -jar JARFILE"
+  # Jar file to run
+  jar-name: "server.jar"
+  # Stop command to shut down the program
+  # "NONE" will simply end the process
+  stop-command: "stop"

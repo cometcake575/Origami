@@ -1,0 +1,15 @@
+[23:04:53] [main/INFO] [com.velocitypowered.proxy.VelocityServer]: Booting up Velocity 3.2.0-SNAPSHOT (git-8dcc7ee3-b294)...
+[23:04:53] [main/INFO] [com.velocitypowered.proxy.VelocityServer]: Loading localizations...
+[23:04:53] [main/INFO] [com.velocitypowered.proxy.network.ConnectionManager]: Connections will use kqueue channels, libdeflate (macOS ARM64 / Apple Silicon) compression, native (macOS ARM64 / Apple Silicon) ciphers
+[23:04:53] [main/WARN] [com.velocitypowered.proxy.config.VelocityConfiguration]: Player info forwarding is disabled! All players will appear to be connecting from the proxy and will have offline-mode UUIDs.
+[23:04:53] [main/INFO] [com.velocitypowered.proxy.VelocityServer]: Loading plugins...
+[23:04:53] [main/INFO] [com.velocitypowered.proxy.VelocityServer]: Loaded 0 plugins
+[23:04:53] [Netty kqueue Boss #0/ERROR] [com.velocitypowered.proxy.network.ConnectionManager]: Can't bind to /0.0.0.0:25577
+io.netty.channel.unix.Errors$NativeIoException: bind(..) failed: Address already in use
+[23:04:53] [main/INFO] [com.velocitypowered.proxy.Metrics]: Velocity and some of its plugins collect metrics and send them to bStats (https://bStats.org).
+[23:04:53] [main/INFO] [com.velocitypowered.proxy.Metrics]: bStats collects some basic information for plugin authors, like how many people use
+[23:04:53] [main/INFO] [com.velocitypowered.proxy.Metrics]: their plugin and their total player count. It's recommended to keep bStats enabled, but
+[23:04:53] [main/INFO] [com.velocitypowered.proxy.Metrics]: if you're not comfortable with this, you can opt-out by editing the config.txt file in
+[23:04:53] [main/INFO] [com.velocitypowered.proxy.Metrics]: the '/plugins/bStats/' folder and setting enabled to false.
+[23:04:53] [main/INFO] [com.velocitypowered.proxy.Velocity]: Done (0.51s)!
+[23:06:28] [Shutdown thread/INFO] [com.velocitypowered.proxy.VelocityServer]: Shutting down the proxy...

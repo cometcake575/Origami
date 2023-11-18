@@ -1,0 +1,22 @@
+# Origami configuration example to run Velocity or other proxies
+# Should work for all Minecraft proxies including Bungeecord, though Velocity is recommended
+
+
+# Settings for the console of the jar
+console:
+  # Whether to enable the console output
+  output-enabled: true
+  # Whether to enable console commands using /origami
+  commands-enabled: true
+  # Permission required to send commands to the console using /origami
+  command-permission: origami.console
+
+executing:
+  # Startup arguments for the jar
+  # JARFILE represents the executable being run
+  start-command: "java -jar JARFILE"
+  # Jar file to run
+  jar-name: "velocity.jar"
+  # Stop command to shut down the program
+  # "NONE" will simply end the process
+  stop-command: "stop"
