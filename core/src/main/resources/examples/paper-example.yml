@@ -1,0 +1,22 @@
+  """
+Origami configuration example for a Paper Minecraft server
+Likely
+"""
+
+
+# Settings for the console of the jar
+console:
+  # Whether to enable the console
+  enabled: true
+  # Permission required to send commands to the console using /origami
+  permission: origami.console
+
+executing:
+  # Stop command to shut down the jar
+  # "NONE" will simply end the process
+  stop-command: "stop"
+  # Startup arguments for the jar
+  # JARFILE represents the executable being run
+  startup-arguments: "java -jar JARFILE"
+  # Jar file to run
+  jar-name: "server.jar"

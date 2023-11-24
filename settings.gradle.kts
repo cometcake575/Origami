@@ -1,2 +1,4 @@
-rootProject.name = "Origami-Paper"
-include("libs")
+rootProject.name = "Origami"
+include("core")
+include("paper")
+include("velocity")

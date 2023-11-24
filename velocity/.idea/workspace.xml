@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3ef9ca39-5c8f-4ce0-851b-0668b900b515" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../core/src/main/java/com/origamimc/LogType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../core/src/main/java/com/origamimc/configurations/Configuration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../core/src/main/java/com/origamimc/main/OrigamiSetup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../paper/src/main/java/com/origamimc/commands/PaperOrigamiCommands.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../paper/src/main/java/com/origamimc/configurations/PaperConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/origamimc/commands/VelocityOrigamiCommands.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/origamimc/configurations/PaperConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/origamimc/main/VelocityOrigamiMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/origamimc/configurations/VelocityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/forwarding.secret" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_ar_SA.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_bg_BG.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_cs_CZ.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_da_DK.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_de_DE.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_es_ES.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_et_EE.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_fi_FI.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_fr_FR.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_he_IL.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_hu_HU.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_it_IT.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_ja_JP.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_ko_KR.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_nb_NO.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_nl_NL.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_nn_NO.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_pl_PL.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_pt_BR.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_ru_RU.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_sk_SK.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_sq_AL.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_sr_CS.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_sv_SE.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_tl_PH.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_tr_TR.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_zh_CN.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/lang/messages_zh_HK.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/logs/latest.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/plugins/bStats/config.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/server.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/velocity.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/origamimc/OrigamiCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/origamimc/commands/PaperOrigamiCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/origamimc/OrigamiInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/../core/src/main/java/com/origamimc/OrigamiInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/origamimc/OrigamiMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../paper/src/main/java/com/origamimc/main/PaperOrigamiMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/resources/plugin.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2Yadwp8V7Y5dopbnx6yUBlssmu1" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3ef9ca39-5c8f-4ce0-851b-0668b900b515" name="Changes" comment="" />
+      <created>1700767865287</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700767865287</updated>
+    </task>
+    <servers />
+  </component>
+</project>
