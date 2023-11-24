@@ -1,6 +1,7 @@
 package com.origamimc.commands;
 
 import com.origamimc.main.PaperOrigamiMain;
+import net.kyori.adventure.text.Component;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -13,7 +14,10 @@ import java.util.List;
 public class PaperOrigamiCommands extends OrigamiCommands implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        return runCommand(args, PaperOrigamiMain.getOrigamiInstances());
+        if (runCommand(args, PaperOrigamiMain.getOrigamiInstances())) {
+            sender.sendMessage(Component.text("Command usage: /origami <instance> <input>"));
+        }
+        return true;
     }
 
     @Override

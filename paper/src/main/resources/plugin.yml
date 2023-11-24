@@ -12,6 +12,7 @@ permissions:
 
 commands:
   origami:
+    aliases: origami-paper
     description: Give an input to a running program
     usage: /<command> <instance> <input>
     permission: origami.command

@@ -1,11 +1,13 @@
 package com.origamimc.main;
 
 import com.origamimc.OrigamiInstance;
+import com.origamimc.commands.VelocityOrigamiCommands;
 import com.origamimc.configurations.VelocityOrigamiConfiguration;
 import com.velocitypowered.api.event.Subscribe;
 import com.velocitypowered.api.event.proxy.ProxyShutdownEvent;
 import com.velocitypowered.api.plugin.Plugin;
 import com.velocitypowered.api.plugin.annotation.DataDirectory;
+import com.velocitypowered.api.proxy.ProxyServer;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
@@ -20,7 +22,6 @@ import java.util.Map;
         name = "Origami",
         version = "1.0.0",
         description = "Run other jar files inside of Velocity servers",
-
         authors = {"cometcake575"}
 )
 public class VelocityOrigamiMain {
@@ -34,10 +35,12 @@ public class VelocityOrigamiMain {
     private static VelocityOrigamiMain instance;
     private final Path dataDirectory;
     @Inject
-    public VelocityOrigamiMain(Logger logger, @DataDirectory Path dataDirectory) {
+    public VelocityOrigamiMain(ProxyServer server, Logger logger, @DataDirectory Path dataDirectory) {
         instance = this;
 
         this.dataDirectory = dataDirectory;
+
+        server.getCommandManager().register("origami", new VelocityOrigamiCommands(), "origami-velocity");
 
 
         this.logger = logger;

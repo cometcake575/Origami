@@ -2,13 +2,16 @@ package com.origamimc.commands;
 
 import com.origamimc.main.VelocityOrigamiMain;
 import com.velocitypowered.api.command.SimpleCommand;
+import net.kyori.adventure.text.Component;
 
 import java.util.List;
 @SuppressWarnings("unused")
 public class VelocityOrigamiCommands extends OrigamiCommands implements SimpleCommand {
     @Override
     public void execute(Invocation invocation) {
-        runCommand(invocation.arguments(), VelocityOrigamiMain.getOrigamiInstances());
+        if (runCommand(invocation.arguments(), VelocityOrigamiMain.getOrigamiInstances())) {
+            invocation.source().sendMessage(Component.text("Command usage: /origami <instance> <input>"));
+        }
     }
 
     @Override

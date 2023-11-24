@@ -30,9 +30,10 @@ public class OrigamiCommands {
 
     public boolean runCommand(String[] args, Map<String, OrigamiInstance> origamiInstances) {
         StringBuilder origamiCommand = new StringBuilder();
-        if (args.length < 2) return false;
+        if (args.length < 2) return true;
         String origamiInstanceName = args[0];
-        OrigamiInstance origamiInstance = origamiInstances.get(origamiInstanceName);
+        OrigamiInstance origamiInstance = origamiInstances.get(origamiInstanceName.toLowerCase());
+        if (origamiInstance == null) return true;
         switch (args[1]) {
             case "command" -> {
                 for (int arg = 2; arg < args.length; arg++) {
@@ -63,6 +64,6 @@ public class OrigamiCommands {
                 origamiInstance.start();
             }
         }
-        return true;
+        return false;
     }
 }

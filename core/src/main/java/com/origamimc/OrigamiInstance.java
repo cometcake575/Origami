@@ -122,6 +122,6 @@ public class OrigamiInstance {
         String stopCommand = config.getString("executing.stop-command");
         if (force || stopCommand == null || stopCommand.equals("NONE")) process.destroy();
         else sendCommand(stopCommand, true);
-        origamiSetup.log("Program %s shutting down".formatted(name), Level.INFO);
+        origamiSetup.log("Program '%s' is shutting down".formatted(name), Level.INFO);
     }
 }
