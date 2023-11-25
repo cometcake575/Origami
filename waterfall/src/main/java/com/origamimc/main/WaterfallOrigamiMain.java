@@ -1,52 +1,46 @@
 package com.origamimc.main;
 
 import com.origamimc.OrigamiInstance;
-import com.origamimc.commands.VelocityOrigamiCommands;
-import com.origamimc.configurations.VelocityOrigamiConfiguration;
-import com.velocitypowered.api.event.Subscribe;
-import com.velocitypowered.api.event.proxy.ProxyShutdownEvent;
-import com.velocitypowered.api.plugin.Plugin;
-import com.velocitypowered.api.plugin.annotation.DataDirectory;
-import com.velocitypowered.api.proxy.ProxyServer;
+import com.origamimc.commands.WaterfallOrigamiCommands;
+import com.origamimc.configurations.WaterfallOrigamiConfiguration;
+import net.md_5.bungee.api.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
-import javax.inject.Inject;
-import java.io.*;
-import java.nio.file.Path;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-@Plugin(
-        id = "origami",
-        name = "Origami",
-        version = "1.0.0",
-        description = "Run other jar files inside of Paper, Velocity or Waterfall servers",
-        authors = {"cometcake575"}
-)
-public class VelocityOrigamiMain {
+public class WaterfallOrigamiMain extends Plugin {
     private static final Map<String, OrigamiInstance> origamiInstances = new HashMap<>();
 
     public static Map<String, OrigamiInstance> getOrigamiInstances() {
         return origamiInstances;
     }
 
-    public final Logger logger;
-    private static VelocityOrigamiMain instance;
-    private final Path dataDirectory;
-    @Inject
-    public VelocityOrigamiMain(ProxyServer server, Logger logger, @DataDirectory Path dataDirectory) {
+    public Logger logger;
+    private static WaterfallOrigamiMain instance;
+    private File dataDirectory;
+
+    @Override
+    public void onEnable() {
         instance = this;
 
-        this.dataDirectory = dataDirectory;
+        this.dataDirectory = getDataFolder();
 
-        server.getCommandManager().register("origami", new VelocityOrigamiCommands(), "origami-velocity");
+        getProxy().getPluginManager().registerCommand(this, new WaterfallOrigamiCommands(
+                "origami",
+                "origami.command",
+                "origami-waterfall"
+        ));
 
+        this.logger = getSLF4JLogger();
+        OrigamiSetup setup = new WaterfallOrigamiSetup();
 
-        this.logger = logger;
-        OrigamiSetup setup = new VelocityOrigamiSetup();
-
-        File programsFolder = new File(dataDirectory.toFile(), "programs");
+        File programsFolder = new File(dataDirectory, "programs");
         boolean ignored = programsFolder.mkdirs();
         File[] files = programsFolder.listFiles();
         if (files != null) {
@@ -55,30 +49,30 @@ public class VelocityOrigamiMain {
                     origamiInstances.put(program.getName().toLowerCase(), new OrigamiInstance(
                             program,
                             program.getName(),
-                            new VelocityOrigamiConfiguration(),
+                            new WaterfallOrigamiConfiguration(),
                             setup
                     ));
                 }
             }
         }
     }
-    @Subscribe
-    @SuppressWarnings("unused")
-    public void onProxyShutdown(ProxyShutdownEvent ignored) {
-        for (OrigamiInstance origamiInstance : VelocityOrigamiMain.getOrigamiInstances().values()) {
+
+    @Override
+    public void onDisable() {
+        for (OrigamiInstance origamiInstance : WaterfallOrigamiMain.getOrigamiInstances().values()) {
             origamiInstance.stop(false);
         }
     }
 
-    public static VelocityOrigamiMain getInstance() {
+    public static WaterfallOrigamiMain getInstance() {
         return instance;
     }
 
-    public static class VelocityOrigamiSetup extends OrigamiSetup {
+    public static class WaterfallOrigamiSetup extends OrigamiSetup {
 
         @Override
         public void saveResource(String resource) {
-            File file = new File(VelocityOrigamiMain.getInstance().dataDirectory.toFile(), resource);
+            File file = new File(WaterfallOrigamiMain.getInstance().dataDirectory, resource);
             boolean ignored1 = file.getParentFile().mkdirs();
             try {
                 boolean ignored2 = file.createNewFile();
@@ -103,7 +97,7 @@ public class VelocityOrigamiMain {
 
         @Override
         public @NotNull Logger getLogger() {
-            return VelocityOrigamiMain.getInstance().logger;
+            return WaterfallOrigamiMain.getInstance().logger;
         }
     }
 }

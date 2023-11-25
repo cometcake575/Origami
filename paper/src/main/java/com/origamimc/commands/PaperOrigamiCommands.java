@@ -11,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class PaperOrigamiCommands extends OrigamiCommands implements CommandExecutor, TabCompleter {
+public class PaperOrigamiCommands implements OrigamiCommands, CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (runCommand(args, PaperOrigamiMain.getOrigamiInstances())) {

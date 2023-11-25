@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class OrigamiCommands {
-    public List<String> getSuggestions(String[] args, Map<String, OrigamiInstance> origamiInstances) {
+public interface OrigamiCommands {
+    default List<String> getSuggestions(String[] args, Map<String, OrigamiInstance> origamiInstances) {
         if (args.length == 1) {
             return new ArrayList<>() {{
                 for (String instanceName : origamiInstances.keySet()) {
@@ -28,7 +28,7 @@ public class OrigamiCommands {
         return new ArrayList<>();
     }
 
-    public boolean runCommand(String[] args, Map<String, OrigamiInstance> origamiInstances) {
+    default boolean runCommand(String[] args, Map<String, OrigamiInstance> origamiInstances) {
         StringBuilder origamiCommand = new StringBuilder();
         if (args.length < 2) return true;
         String origamiInstanceName = args[0];

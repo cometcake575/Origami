@@ -1,0 +1,5 @@
+name: Origami
+main: com.origamimc.main.WaterfallOrigamiMain
+version: 1.0.0
+author: cometcake575
+description: Run other jar files inside of Paper, Velocity or Waterfall servers

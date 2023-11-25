@@ -6,7 +6,7 @@ import net.kyori.adventure.text.Component;
 
 import java.util.List;
 @SuppressWarnings("unused")
-public class VelocityOrigamiCommands extends OrigamiCommands implements SimpleCommand {
+public class VelocityOrigamiCommands implements OrigamiCommands, SimpleCommand {
     @Override
     public void execute(Invocation invocation) {
         if (runCommand(invocation.arguments(), VelocityOrigamiMain.getOrigamiInstances())) {
