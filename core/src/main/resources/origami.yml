@@ -5,7 +5,7 @@ console:
   # Whether to enable console commands using /origami
   commands-enabled: true
   # Permission required to send commands to the console using /origami
-  command-permission: origami.console
+  command-permission: origami.command
 
 executing:
   # Startup arguments for the jar
