@@ -28,12 +28,14 @@ public interface OrigamiCommands {
         return new ArrayList<>();
     }
 
-    default boolean runCommand(String[] args, Map<String, OrigamiInstance> origamiInstances) {
+    default boolean runCommand(String[] args, Map<String, OrigamiInstance> origamiInstances, OrigamiPermissionHolder permissionHolder) {
         StringBuilder origamiCommand = new StringBuilder();
         if (args.length < 2) return true;
         String origamiInstanceName = args[0];
         OrigamiInstance origamiInstance = origamiInstances.get(origamiInstanceName.toLowerCase());
         if (origamiInstance == null) return true;
+        String commandPermission = origamiInstance.getCommandPermission();
+        if (!permissionHolder.hasPermission(commandPermission)) return false;
         switch (args[1]) {
             case "command" -> {
                 for (int arg = 2; arg < args.length; arg++) {

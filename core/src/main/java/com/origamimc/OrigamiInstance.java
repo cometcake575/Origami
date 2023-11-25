@@ -67,7 +67,14 @@ public class OrigamiInstance {
         }
         canSendCommands = config.getBoolean("console.commands-enabled");
         jarFile = new File(programFolder, fileName);
+        commandPermission = config.getString("console.command-permission");
         start();
+    }
+
+    private String commandPermission;
+
+    public String getCommandPermission() {
+        return commandPermission;
     }
 
     public void start() {

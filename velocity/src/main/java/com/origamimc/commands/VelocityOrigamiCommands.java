@@ -2,6 +2,7 @@ package com.origamimc.commands;
 
 import com.origamimc.main.VelocityOrigamiMain;
 import com.velocitypowered.api.command.SimpleCommand;
+import com.velocitypowered.api.proxy.Player;
 import net.kyori.adventure.text.Component;
 
 import java.util.List;
@@ -9,7 +10,11 @@ import java.util.List;
 public class VelocityOrigamiCommands implements OrigamiCommands, SimpleCommand {
     @Override
     public void execute(Invocation invocation) {
-        if (runCommand(invocation.arguments(), VelocityOrigamiMain.getOrigamiInstances())) {
+        OrigamiPermissionHolder permissionHolder;
+        if (invocation.source() instanceof Player player) {
+            permissionHolder = new VelocityOrigamiPermissionHolder(player);
+        } else permissionHolder = OrigamiPermissionHolder.consolePermissions;
+        if (runCommand(invocation.arguments(), VelocityOrigamiMain.getOrigamiInstances(), permissionHolder)) {
             invocation.source().sendMessage(Component.text("Command usage: /origami <instance> <input>"));
         }
     }
