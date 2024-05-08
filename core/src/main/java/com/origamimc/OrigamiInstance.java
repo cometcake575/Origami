@@ -28,7 +28,8 @@ public class OrigamiInstance {
     private final File jarFile;
     private boolean running;
     private final OrigamiConfiguration config;
-    private Thread thread;
+    private Thread errorThread;
+    private Thread inputThread;
     String name;
     private boolean canSendCommands;
 
@@ -96,10 +97,9 @@ public class OrigamiInstance {
         if (config.getBoolean("console.output-enabled")) {
             InputStream in = process.getInputStream();
             InputStream err = process.getErrorStream();
-            thread = new Thread(() -> {
+            inputThread = new Thread(() -> {
 
                 BufferedReader inputReader = new BufferedReader(new InputStreamReader(in));
-                BufferedReader errorReader = new BufferedReader(new InputStreamReader(err));
 
                 String line;
                 try {
@@ -107,19 +107,26 @@ public class OrigamiInstance {
                         origamiSetup.log("%s output: %s".formatted(name, line), Level.INFO);
                     }
                 } catch (IOException e) {
-                    thread.interrupt();
+                    inputThread.interrupt();
                 }
+            });
+            
+            errorThread = new Thread(() -> {
 
+                BufferedReader errorReader = new BufferedReader(new InputStreamReader(err));
+
+                String line;
                 try {
                     while ((line = errorReader.readLine()) != null) {
                         origamiSetup.log("%s error: %s".formatted(name, line), Level.SEVERE);
                     }
                 } catch (IOException e) {
-                    thread.interrupt();
+                    inputThread.interrupt();
                 }
             });
 
-            thread.start();
+            errorThread.start();
+            inputThread.start();
         }
     }
 
