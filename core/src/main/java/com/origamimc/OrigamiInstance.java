@@ -21,7 +21,7 @@ public class OrigamiInstance {
             outputStream.write((command + "\n").getBytes());
             outputStream.flush();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
@@ -110,7 +110,7 @@ public class OrigamiInstance {
                     inputThread.interrupt();
                 }
             });
-            
+
             errorThread = new Thread(() -> {
 
                 BufferedReader errorReader = new BufferedReader(new InputStreamReader(err));
@@ -121,7 +121,7 @@ public class OrigamiInstance {
                         origamiSetup.log("%s error: %s".formatted(name, line), Level.SEVERE);
                     }
                 } catch (IOException e) {
-                    inputThread.interrupt();
+                    errorThread.interrupt();
                 }
             });
 
