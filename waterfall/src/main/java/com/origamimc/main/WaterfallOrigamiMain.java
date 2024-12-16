@@ -1,11 +1,12 @@
 package com.origamimc.main;
 
 import com.origamimc.OrigamiInstance;
+import com.origamimc.Logger;
+import com.origamimc.WaterfallLogger;
 import com.origamimc.commands.WaterfallOrigamiCommands;
 import com.origamimc.configurations.WaterfallOrigamiConfiguration;
 import net.md_5.bungee.api.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
-import org.slf4j.Logger;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -37,7 +38,7 @@ public class WaterfallOrigamiMain extends Plugin {
                 "origami-waterfall"
         ));
 
-        this.logger = getSLF4JLogger();
+        this.logger = new WaterfallLogger(getSLF4JLogger());
         OrigamiSetup setup = new WaterfallOrigamiSetup();
 
         File programsFolder = new File(dataDirectory, "programs");

@@ -1,6 +1,8 @@
 package com.origamimc.main;
 
 import com.origamimc.OrigamiInstance;
+import com.origamimc.Logger;
+import com.origamimc.PaperLogger;
 import com.origamimc.commands.PaperOrigamiCommands;
 import com.origamimc.configurations.PaperOrigamiConfiguration;
 import org.bukkit.command.*;
@@ -10,7 +12,6 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import java.io.InputStream;
 import java.util.*;
-import org.slf4j.Logger;
 
 public class PaperOrigamiMain extends JavaPlugin implements CommandExecutor, TabCompleter {
 
@@ -26,9 +27,13 @@ public class PaperOrigamiMain extends JavaPlugin implements CommandExecutor, Tab
         return instance;
     }
 
+    public Logger logger;
+
     @Override
     public void onEnable() {
         instance = this;
+
+        this.logger = new PaperLogger(this.getSLF4JLogger());
         OrigamiSetup setup = new PaperOrigamiSetup();
         saveResource("examples/default-example.yml", true);
         saveResource("examples/discordbot-example.yml", true);
@@ -77,7 +82,7 @@ public class PaperOrigamiMain extends JavaPlugin implements CommandExecutor, Tab
 
         @Override
         public @NotNull Logger getLogger() {
-            return PaperOrigamiMain.getInstance().getSLF4JLogger();
+            return PaperOrigamiMain.getInstance().logger;
         }
     }
 }
