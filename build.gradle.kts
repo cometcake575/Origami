@@ -14,5 +14,6 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":paper"))
     implementation(project(":velocity"))
-    implementation(project(":waterfall"))
+    // implementation(project(":waterfall"))
+    implementation(project(":bungeecord"))
 }
