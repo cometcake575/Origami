@@ -1,10 +1,11 @@
 package com.origamimc.main;
 
 import org.jetbrains.annotations.NotNull;
-import org.slf4j.Logger;
 
 import java.io.InputStream;
 import java.util.logging.Level;
+
+import com.origamimc.Logger;
 
 public abstract class OrigamiSetup {
     public OrigamiSetup() {
