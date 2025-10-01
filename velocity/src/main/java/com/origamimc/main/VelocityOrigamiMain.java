@@ -1,5 +1,6 @@
 package com.origamimc.main;
 
+import com.google.inject.Inject;
 import com.origamimc.OrigamiInstance;
 import com.origamimc.Logger;
 import com.origamimc.VelocityLogger;
@@ -12,7 +13,6 @@ import com.velocitypowered.api.plugin.annotation.DataDirectory;
 import com.velocitypowered.api.proxy.ProxyServer;
 import org.jetbrains.annotations.NotNull;
 
-import javax.inject.Inject;
 import java.io.*;
 import java.nio.file.Path;
 import java.util.HashMap;
